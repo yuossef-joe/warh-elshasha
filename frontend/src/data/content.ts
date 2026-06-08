@@ -117,7 +117,7 @@ export const services: Service[] = [
 export const therapists: Therapist[] = [
   {
     id: "dr-mariam",
-    name: { en: "Dr. Mariam Hassan", ar: "د. مريم حسن" },
+    name: { en: "Dr. 'Marina Ibrahim'", ar: "د. مارينا ابراهيم" },
     title: { en: "Clinical Psychologist", ar: "أخصائية نفسية إكلينيكية" },
     bio: {
       en: "Focuses on anxiety, emotional regulation, family stress, and evidence-informed therapy planning.",
