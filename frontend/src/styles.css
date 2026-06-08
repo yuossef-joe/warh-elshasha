@@ -548,13 +548,13 @@ p {
 }
 
 .wide-section-image {
-  block-size: clamp(280px, 44vw, 560px);
+  block-size: clamp(240px, 36vw, 460px);
 }
 
 .image-backed-section {
   position: relative;
   isolation: isolate;
-  min-block-size: clamp(520px, 58vw, 760px);
+  min-block-size: clamp(420px, 46vw, 620px);
   margin-block: 0 clamp(8px, 2vw, 22px);
 }
 
@@ -588,9 +588,9 @@ p {
 .image-backed-content {
   position: relative;
   z-index: 4;
-  min-block-size: clamp(520px, 58vw, 760px);
+  min-block-size: clamp(420px, 46vw, 620px);
   align-content: end;
-  padding: clamp(88px, 12vw, 148px) clamp(18px, 4vw, 48px) clamp(28px, 5vw, 56px);
+  padding: clamp(72px, 9vw, 108px) clamp(18px, 4vw, 42px) clamp(24px, 4vw, 44px);
 }
 
 .image-backed-content.card-grid {
@@ -599,7 +599,7 @@ p {
 
 .image-backed-content.stack {
   align-content: center;
-  max-inline-size: 980px;
+  inline-size: 100%;
 }
 
 .image-backed-content.editorial-list {
@@ -808,6 +808,11 @@ dd {
 .stack {
   display: grid;
   gap: 14px;
+  inline-size: 100%;
+}
+
+.stack > .motion-effect {
+  inline-size: 100%;
 }
 
 .therapist-row {
@@ -817,6 +822,7 @@ dd {
   grid-template-columns: auto 1fr auto;
   gap: 20px;
   align-items: center;
+  inline-size: 100%;
   padding: 22px;
   border: 1px solid var(--color-border);
   border-radius: 8px;
@@ -1340,7 +1346,7 @@ textarea {
   }
 
   .image-backed-content {
-    padding: clamp(84px, 18vw, 118px) 16px 22px;
+    padding: clamp(72px, 15vw, 96px) 16px 20px;
   }
 }
 
