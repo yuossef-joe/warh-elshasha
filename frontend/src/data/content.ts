@@ -1,6 +1,13 @@
-import type { Article, Locale, Program, Service, Therapist } from "../types/content";
+import type {
+  Article,
+  Locale,
+  Program,
+  Service,
+  Therapist,
+} from "../types/content";
 
-export const t = (value: Record<Locale, string>, locale: Locale) => value[locale] ?? value.en;
+export const t = (value: Record<Locale, string>, locale: Locale) =>
+  value[locale] ?? value.en;
 
 export const copy = {
   nav: {
@@ -34,7 +41,10 @@ export const services: Service[] = [
     id: "individual-therapy",
     title: { en: "Individual Therapy", ar: "العلاج الفردي" },
     type: "therapy_session",
-    tagline: { en: "Private support for emotional wellbeing.", ar: "دعم خاص للصحة النفسية والعاطفية." },
+    tagline: {
+      en: "Private support for emotional wellbeing.",
+      ar: "دعم خاص للصحة النفسية والعاطفية.",
+    },
     description: {
       en: "Structured sessions for stress, anxiety, mood, life transitions, and personal growth.",
       ar: "جلسات منظمة لدعم التوتر والقلق والمزاج والتحولات الحياتية والنمو الشخصي.",
@@ -49,7 +59,10 @@ export const services: Service[] = [
     id: "family-counseling",
     title: { en: "Family Counseling", ar: "الإرشاد الأسري" },
     type: "counseling_session",
-    tagline: { en: "Guided conversations for family systems.", ar: "حوارات موجهة للعلاقات الأسرية." },
+    tagline: {
+      en: "Guided conversations for family systems.",
+      ar: "حوارات موجهة للعلاقات الأسرية.",
+    },
     description: {
       en: "Support for communication, parenting stress, conflict patterns, and shared care plans.",
       ar: "دعم للتواصل وضغوط التربية وأنماط الخلاف وخطط الرعاية المشتركة.",
@@ -64,7 +77,10 @@ export const services: Service[] = [
     id: "child-adolescent",
     title: { en: "Child & Adolescent Support", ar: "دعم الأطفال والمراهقين" },
     type: "consultation",
-    tagline: { en: "Care pathways with guardian consent.", ar: "مسارات رعاية بموافقة ولي الأمر." },
+    tagline: {
+      en: "Care pathways with guardian consent.",
+      ar: "مسارات رعاية بموافقة ولي الأمر.",
+    },
     description: {
       en: "Consultation and counseling guidance for children, adolescents, and parents.",
       ar: "استشارات وإرشاد للأطفال والمراهقين وأولياء الأمور.",
@@ -79,7 +95,10 @@ export const services: Service[] = [
     id: "assessment",
     title: { en: "Psychological Assessments", ar: "التقييمات النفسية" },
     type: "assessment",
-    tagline: { en: "Professional assessment with controlled follow-up.", ar: "تقييم مهني مع متابعة منظمة." },
+    tagline: {
+      en: "Professional assessment with controlled follow-up.",
+      ar: "تقييم مهني مع متابعة منظمة.",
+    },
     description: {
       en: "Assessment booking with consent, preparation guidance, and follow-up recommendations.",
       ar: "حجز تقييم مع موافقة وإرشادات تحضير وتوصيات متابعة.",
@@ -87,7 +106,10 @@ export const services: Service[] = [
     duration: { en: "Varies by assessment", ar: "تختلف حسب التقييم" },
     price: { en: "By assessment type", ar: "حسب نوع التقييم" },
     deliveryMode: "offline",
-    audience: { en: "Adults, children, and guardians", ar: "البالغون والأطفال وأولياء الأمور" },
+    audience: {
+      en: "Adults, children, and guardians",
+      ar: "البالغون والأطفال وأولياء الأمور",
+    },
     availability: "available",
   },
 ];
@@ -101,34 +123,43 @@ export const therapists: Therapist[] = [
       en: "Focuses on anxiety, emotional regulation, family stress, and evidence-informed therapy planning.",
       ar: "تركز على القلق وتنظيم المشاعر وضغوط الأسرة وخطط العلاج المبنية على الدليل.",
     },
-    credentials: { en: "PhD Psychology, CBT certified", ar: "دكتوراه علم النفس، معتمدة في العلاج المعرفي السلوكي" },
-    specializations: [{ en: "Anxiety", ar: "القلق" }, { en: "Family stress", ar: "ضغوط الأسرة" }],
+    credentials: {
+      en: "PhD Psychology, CBT certified",
+      ar: "دكتوراه علم النفس، معتمدة في العلاج المعرفي السلوكي",
+    },
+    specializations: [
+      { en: "Anxiety", ar: "القلق" },
+      { en: "Family stress", ar: "ضغوط الأسرة" },
+    ],
     languages: ["Arabic", "English"],
     sessionModes: ["online", "offline"],
     availability: { en: "Mon, Wed, Sat", ar: "الإثنين، الأربعاء، السبت" },
     services: ["individual-therapy", "child-adolescent"],
   },
-  {
-    id: "ahmed-samir",
-    name: { en: "Ahmed Samir", ar: "أحمد سمير" },
-    title: { en: "Counselor & Group Facilitator", ar: "مرشد وميسر مجموعات" },
-    bio: {
-      en: "Supports family communication, group programs, and practical follow-up plans.",
-      ar: "يدعم التواصل الأسري وبرامج المجموعات وخطط المتابعة العملية.",
-    },
-    credentials: { en: "MSc Counseling Psychology", ar: "ماجستير الإرشاد النفسي" },
-    specializations: [{ en: "Family counseling", ar: "الإرشاد الأسري" }, { en: "Support groups", ar: "مجموعات الدعم" }],
-    languages: ["Arabic"],
-    sessionModes: ["offline"],
-    availability: { en: "Tue, Thu", ar: "الثلاثاء، الخميس" },
-    services: ["family-counseling"],
-  },
+  // {
+  //   id: "ahmed-samir",
+  //   name: { en: "Ahmed Samir", ar: "أحمد سمير" },
+  //   title: { en: "Counselor & Group Facilitator", ar: "مرشد وميسر مجموعات" },
+  //   bio: {
+  //     en: "Supports family communication, group programs, and practical follow-up plans.",
+  //     ar: "يدعم التواصل الأسري وبرامج المجموعات وخطط المتابعة العملية.",
+  //   },
+  //   credentials: { en: "MSc Counseling Psychology", ar: "ماجستير الإرشاد النفسي" },
+  //   specializations: [{ en: "Family counseling", ar: "الإرشاد الأسري" }, { en: "Support groups", ar: "مجموعات الدعم" }],
+  //   languages: ["Arabic"],
+  //   sessionModes: ["offline"],
+  //   availability: { en: "Tue, Thu", ar: "الثلاثاء، الخميس" },
+  //   services: ["family-counseling"],
+  // },
 ];
 
 export const articles: Article[] = [
   {
     slug: "how-to-start-therapy",
-    title: { en: "How to prepare for a first therapy session", ar: "كيف تستعد لجلسة العلاج الأولى" },
+    title: {
+      en: "How to prepare for a first therapy session",
+      ar: "كيف تستعد لجلسة العلاج الأولى",
+    },
     excerpt: {
       en: "A simple guide to expectations, privacy, and what to bring into the first conversation.",
       ar: "دليل بسيط للتوقعات والخصوصية وما يمكن مشاركته في أول حوار.",
@@ -150,7 +181,10 @@ export const articles: Article[] = [
   },
   {
     slug: "supporting-adolescents",
-    title: { en: "Supporting adolescents with emotional pressure", ar: "دعم المراهقين مع الضغط العاطفي" },
+    title: {
+      en: "Supporting adolescents with emotional pressure",
+      ar: "دعم المراهقين مع الضغط العاطفي",
+    },
     excerpt: {
       en: "How guardians can notice stress signals and open safer conversations.",
       ar: "كيف يلاحظ أولياء الأمور علامات الضغط ويفتحون حوارات أكثر أمانا.",
@@ -188,7 +222,10 @@ export const programs: Program[] = [
   },
   {
     id: "awareness-event",
-    title: { en: "Mental Health Awareness Evening", ar: "أمسية التوعية بالصحة النفسية" },
+    title: {
+      en: "Mental Health Awareness Evening",
+      ar: "أمسية التوعية بالصحة النفسية",
+    },
     topic: { en: "Awareness event", ar: "فعالية توعوية" },
     description: {
       en: "A public session on stigma, help-seeking, and family support.",
