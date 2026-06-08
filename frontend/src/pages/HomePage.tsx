@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import AnimatedText from "../components/AnimatedText";
 import { Effect, Effects } from "../components/Effect";
 import Section from "../components/Section";
+import SectionImage from "../components/SectionImage";
 import ServiceCard from "../components/ServiceCard";
 import TherapistCard from "../components/TherapistCard";
 import { articles, copy, services, t, therapists } from "../data/content";
+import { sectionImages } from "../data/images";
 import type { Locale } from "../types/content";
 
 export default function HomePage({ locale }: { locale: Locale }) {
@@ -41,7 +43,12 @@ export default function HomePage({ locale }: { locale: Locale }) {
           </Effects>
         </div>
         <div className="hero-visual">
-          <div className="hero-image" role="img" aria-label="A calm therapy consultation room illustration" />
+          <div
+            className="hero-image"
+            role="img"
+            aria-label={t(sectionImages.hero.alt, locale)}
+            style={{ backgroundImage: `url(${sectionImages.hero.src})` }}
+          />
           <div className="activity-rail" aria-hidden="true">
             <span>{locale === "ar" ? "استشارة" : "Consultation"}</span>
             <span>{locale === "ar" ? "تأكيد" : "Confirm"}</span>
@@ -55,12 +62,21 @@ export default function HomePage({ locale }: { locale: Locale }) {
         title={locale === "ar" ? "اختر نوع الدعم المناسب" : "Choose the support that fits"}
         intro={locale === "ar" ? "خدمات واضحة للحجز الفردي والأسري والتقييمات ومجموعات الدعم." : "Clear services for individual care, family support, assessments, and group programs."}
       >
-        <div className="card-grid">
-          <Effects>
-            {services.slice(0, 3).map((service) => (
-              <ServiceCard key={service.id} service={service} locale={locale} />
-            ))}
-          </Effects>
+        <div className="image-backed-section">
+          <SectionImage
+            src={sectionImages.services.src}
+            alt={sectionImages.services.alt}
+            locale={locale}
+            className="wide-section-image"
+            label={{ en: "Care pathways", ar: "مسارات الرعاية" }}
+          />
+          <div className="image-backed-content card-grid">
+            <Effects>
+              {services.slice(0, 3).map((service) => (
+                <ServiceCard key={service.id} service={service} locale={locale} />
+              ))}
+            </Effects>
+          </div>
         </div>
       </Section>
 
@@ -88,12 +104,21 @@ export default function HomePage({ locale }: { locale: Locale }) {
         eyebrow={locale === "ar" ? "الفريق" : "Therapists"}
         title={locale === "ar" ? "ملفات مهنية واضحة" : "Professional profiles, easy decisions"}
       >
-        <div className="stack">
-          <Effects slide="left">
-            {therapists.map((therapist) => (
-              <TherapistCard key={therapist.id} therapist={therapist} locale={locale} />
-            ))}
-          </Effects>
+        <div className="image-backed-section">
+          <SectionImage
+            src={sectionImages.therapists.src}
+            alt={sectionImages.therapists.alt}
+            locale={locale}
+            className="wide-section-image"
+            label={{ en: "Clinical team", ar: "الفريق المختص" }}
+          />
+          <div className="image-backed-content stack">
+            <Effects slide="left">
+              {therapists.map((therapist) => (
+                <TherapistCard key={therapist.id} therapist={therapist} locale={locale} />
+              ))}
+            </Effects>
+          </div>
         </div>
       </Section>
 
@@ -101,16 +126,25 @@ export default function HomePage({ locale }: { locale: Locale }) {
         eyebrow={locale === "ar" ? "محتوى توعوي" : "Psychological media"}
         title={locale === "ar" ? "تعلم قبل أن تحجز" : "Learn before you book"}
       >
-        <div className="editorial-list">
-          <Effects slide="up" blur={false}>
-            {articles.map((article) => (
-              <Link key={article.slug} to={`/articles/${article.slug}`}>
-                <span>{t(article.topic, locale)}</span>
-                <strong>{t(article.title, locale)}</strong>
-                <p>{t(article.excerpt, locale)}</p>
-              </Link>
-            ))}
-          </Effects>
+        <div className="image-backed-section">
+          <SectionImage
+            src={sectionImages.media.src}
+            alt={sectionImages.media.alt}
+            locale={locale}
+            className="wide-section-image"
+            label={{ en: "Psychological media", ar: "محتوى نفسي" }}
+          />
+          <div className="image-backed-content editorial-list">
+            <Effects slide="up" blur={false}>
+              {articles.map((article) => (
+                <Link key={article.slug} to={`/articles/${article.slug}`}>
+                  <span>{t(article.topic, locale)}</span>
+                  <strong>{t(article.title, locale)}</strong>
+                  <p>{t(article.excerpt, locale)}</p>
+                </Link>
+              ))}
+            </Effects>
+          </div>
         </div>
       </Section>
     </main>
